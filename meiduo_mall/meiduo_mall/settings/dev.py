@@ -16,6 +16,8 @@ import sys  # python模块
 # sys.path#导入包的路径
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import datetime
+
 '''
 __file__===>当前文件名dev.py
 os.path.abspath()===>/home/python/Desktop/meiduo_tbd39/meiduo_mall/meiduo_mall/settings/dev.py
@@ -62,12 +64,15 @@ INSTALLED_APPS = [
     'carts.apps.CartsConfig',
     'orders.apps.OrdersConfig',
     'payments.apps.PaymentsConfig',
-
+    'meiduo_admin.apps.MeiduoAdminConfig',
     'haystack',
     'django_crontab',  # 定时任务
+    'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -313,3 +318,24 @@ CRONJOBS = [
      '>> ' + os.path.join(os.path.dirname(BASE_DIR), 'logs/crontab.log'))
 ]
 CRONTAB_COMMAND_PREFIX = 'LANG_ALL=zh_cn.UTF-8'  # 支持中文
+
+# CORS
+CORS_ORIGIN_WHITELIST = (
+    '127.0.0.1:8080',
+    'localhost:8080',
+    'www.meiduo.site:8080',
+    'api.meiduo.site:8000'
+)
+CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+    'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+    'rest_framework.authentication.SessionAuthentication',
+    'rest_framework.authentication.BasicAuthentication',
+    ),
+}
+
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
+}

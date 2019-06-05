@@ -7,6 +7,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from QQLoginTool.QQtool import OAuthQQ
 from meiduo_mall.utils.response_code import RETCODE
+
 from .models import OAuthQQUser
 from meiduo_mall.utils import meiduo_signature
 from . import constants

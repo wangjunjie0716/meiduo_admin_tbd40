@@ -324,3 +324,125 @@ INFO 2019-05-26 03:36:56,611 basehttp 124 "GET /static/js/vue-2.5.16.js HTTP/1.1
 INFO 2019-05-26 03:36:56,618 basehttp 124 "GET /static/js/axios-0.18.0.min.js HTTP/1.1" 304 0
 INFO 2019-05-26 03:36:56,635 basehttp 124 "GET /static/js/register.js HTTP/1.1" 304 0
 INFO 2019-05-26 03:36:56,636 basehttp 124 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2019-06-05 07:59:13,713 basehttp 124 "GET / HTTP/1.1" 200 124657
+INFO 2019-06-05 07:59:13,923 basehttp 124 "GET /static/css/reset.css HTTP/1.1" 200 638
+INFO 2019-06-05 07:59:13,931 basehttp 124 "GET /static/css/main.css HTTP/1.1" 200 39722
+INFO 2019-06-05 07:59:14,005 basehttp 124 "GET /static/js/host.js HTTP/1.1" 200 120
+INFO 2019-06-05 07:59:14,007 basehttp 124 "GET /static/js/axios-0.18.0.min.js HTTP/1.1" 200 12941
+INFO 2019-06-05 07:59:14,017 basehttp 124 "GET /static/js/vue-2.5.16.js HTTP/1.1" 200 289307
+INFO 2019-06-05 07:59:14,026 basehttp 124 "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 200 97163
+INFO 2019-06-05 07:59:14,031 basehttp 124 "GET /static/js/common.js HTTP/1.1" 200 891
+INFO 2019-06-05 07:59:14,042 basehttp 124 "GET /static/js/index.js HTTP/1.1" 200 1418
+INFO 2019-06-05 07:59:14,047 basehttp 124 "GET /static/js/slide.js HTTP/1.1" 200 1822
+INFO 2019-06-05 07:59:14,122 basehttp 124 "GET /static/images/logo.png HTTP/1.1" 200 7450
+INFO 2019-06-05 07:59:14,696 basehttp 124 "GET /static/images/icons.png HTTP/1.1" 200 7740
+WARNING 2019-06-05 07:59:23,711 base 152 Not Found: /favicon.ico
+WARNING 2019-06-05 07:59:23,715 basehttp 124 "GET /favicon.ico HTTP/1.1" 404 8283
+INFO 2019-06-05 07:59:24,899 basehttp 124 "GET /login/ HTTP/1.1" 200 3605
+INFO 2019-06-05 07:59:24,991 basehttp 124 "GET /static/js/login.js HTTP/1.1" 200 1759
+WARNING 2019-06-05 07:59:27,781 basehttp 124 "POST /login/ HTTP/1.1" 403 24
+WARNING 2019-06-05 08:10:56,126 basehttp 124 "POST /login/ HTTP/1.1" 403 24
+WARNING 2019-06-05 08:11:34,685 basehttp 124 "POST /login/ HTTP/1.1" 403 24
+ERROR 2019-06-05 08:11:46,583 exception 135 Internal Server Error: /login/
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django_redis/cache.py", line 32, in _decorator
+    return method(self, *args, **kwargs)
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django_redis/cache.py", line 124, in has_key
+    return self.client.has_key(*args, **kwargs)
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django_redis/client/default.py", line 477, in has_key
+    raise ConnectionInterrupted(connection=client, parent=e)
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/python/Desktop/tbd_40/meiduo_admin_tbd40/meiduo_mall/meiduo_mall/apps/users/views.py", line 130, in post
+    login(request, user)
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django/contrib/auth/__init__.py", line 140, in login
+    request.session.cycle_key()
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 311, in cycle_key
+    self.create()
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django/contrib/sessions/backends/cache.py", line 44, in create
+    self._session_key = self._get_new_session_key()
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django/contrib/sessions/backends/base.py", line 164, in _get_new_session_key
+    if not self.exists(session_key):
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django/contrib/sessions/backends/cache.py", line 71, in exists
+    return session_key and (self.cache_key_prefix + session_key) in self._cache
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django/core/cache/backends/base.py", line 203, in __contains__
+    return self.has_key(key)
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django_redis/cache.py", line 39, in _decorator
+    raise e.parent
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/django_redis/client/default.py", line 475, in has_key
+    return client.exists(key)
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/redis/client.py", line 951, in exists
+    return self.execute_command('EXISTS', name)
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/redis/client.py", line 673, in execute_command
+    connection.send_command(*args)
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/redis/connection.py", line 610, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/redis/connection.py", line 585, in send_packed_command
+    self.connect()
+  File "/home/python/.virtualenvs/meiduo_admin_tbd40/lib/python3.5/site-packages/redis/connection.py", line 489, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to 127.0.0.1:6379. Connection refused.
+ERROR 2019-06-05 08:11:46,851 basehttp 124 "POST /login/ HTTP/1.1" 500 154266
+INFO 2019-06-05 08:12:18,999 basehttp 124 "POST /login/ HTTP/1.1" 302 0
+INFO 2019-06-05 08:12:20,584 basehttp 124 "GET / HTTP/1.1" 200 124657
+INFO 2019-06-05 08:12:20,905 basehttp 124 "GET /static/js/host.js HTTP/1.1" 304 0
+INFO 2019-06-05 08:12:20,941 basehttp 124 "GET /static/css/main.css HTTP/1.1" 304 0
+INFO 2019-06-05 08:12:20,942 basehttp 124 "GET /static/js/jquery-1.12.4.min.js HTTP/1.1" 304 0
+INFO 2019-06-05 08:12:20,947 basehttp 124 "GET /static/css/reset.css HTTP/1.1" 304 0
+INFO 2019-06-05 08:12:20,959 basehttp 124 "GET /static/js/axios-0.18.0.min.js HTTP/1.1" 304 0
+INFO 2019-06-05 08:12:20,963 basehttp 124 "GET /static/js/vue-2.5.16.js HTTP/1.1" 304 0
+INFO 2019-06-05 08:12:20,978 basehttp 124 "GET /static/js/common.js HTTP/1.1" 304 0
+INFO 2019-06-05 08:12:20,979 basehttp 124 "GET /static/js/slide.js HTTP/1.1" 304 0
+INFO 2019-06-05 08:12:20,979 basehttp 124 "GET /static/js/index.js HTTP/1.1" 304 0
+INFO 2019-06-05 08:12:21,000 basehttp 124 "GET /static/images/logo.png HTTP/1.1" 304 0
+INFO 2019-06-05 08:12:21,198 basehttp 124 "GET /static/images/icons.png HTTP/1.1" 304 0
+INFO 2019-06-05 08:12:25,008 basehttp 124 "GET /info/ HTTP/1.1" 200 5714
+INFO 2019-06-05 08:12:25,106 basehttp 124 "GET /static/js/user_center_info.js HTTP/1.1" 200 3200
+INFO 2019-06-05 08:12:28,523 basehttp 124 "GET /orders/info/1/ HTTP/1.1" 200 5721
+INFO 2019-06-05 08:12:28,687 basehttp 124 "GET /static/js/user_center_order.js HTTP/1.1" 200 1240
+INFO 2019-06-05 08:12:28,688 basehttp 124 "GET /static/js/jquery.pagination.min.js HTTP/1.1" 200 2935
+INFO 2019-06-05 08:12:28,689 basehttp 124 "GET /static/css/jquery.pagination.css HTTP/1.1" 200 523
+WARNING 2019-06-05 08:12:31,707 base 152 Not Found: /orders/info/1/user_center_site.html
+WARNING 2019-06-05 08:12:31,708 basehttp 124 "GET /orders/info/1/user_center_site.html HTTP/1.1" 404 8469
+WARNING 2019-06-05 08:12:35,715 base 152 Not Found: /orders/info/1/user_center_pass.html
+WARNING 2019-06-05 08:12:35,716 basehttp 124 "GET /orders/info/1/user_center_pass.html HTTP/1.1" 404 8469
+WARNING 2019-06-05 08:13:28,769 base 152 Not Found: /meiduo_admin/authorizations/
+WARNING 2019-06-05 08:13:28,788 basehttp 124 "OPTIONS /meiduo_admin/authorizations/ HTTP/1.1" 404 8332
+WARNING 2019-06-05 08:13:38,886 base 152 Not Found: /meiduo_admin/authorizations/
+WARNING 2019-06-05 08:13:38,887 basehttp 124 "OPTIONS /meiduo_admin/authorizations/ HTTP/1.1" 404 8332
+WARNING 2019-06-05 08:27:37,292 base 152 Not Found: /meiduo_admin/authorizations/
+WARNING 2019-06-05 08:27:37,294 basehttp 124 "OPTIONS /meiduo_admin/authorizations/ HTTP/1.1" 404 8332
+WARNING 2019-06-05 08:30:08,263 base 152 Not Found: /meiduo_admin/authorizations/
+WARNING 2019-06-05 08:30:08,272 basehttp 124 "OPTIONS /meiduo_admin/authorizations/ HTTP/1.1" 404 8332
+WARNING 2019-06-05 08:33:33,715 base 152 Not Found: /meiduo_admin/authorizations/
+WARNING 2019-06-05 08:33:33,716 basehttp 124 "OPTIONS /meiduo_admin/authorizations/ HTTP/1.1" 404 8332
+INFO 2019-06-05 08:41:28,031 basehttp 124 "OPTIONS /meiduo_admin/authorizations/ HTTP/1.1" 200 0
+WARNING 2019-06-05 08:41:28,187 base 152 Not Found: /meiduo_admin/authorizations/
+WARNING 2019-06-05 08:41:28,188 basehttp 124 "POST /meiduo_admin/authorizations/ HTTP/1.1" 404 8329
+WARNING 2019-06-05 08:41:38,491 base 152 Not Found: /meiduo_admin/authorizations/
+WARNING 2019-06-05 08:41:38,492 basehttp 124 "POST /meiduo_admin/authorizations/ HTTP/1.1" 404 8329
+WARNING 2019-06-05 08:41:45,872 base 152 Not Found: /meiduo_admin/authorizations/
+WARNING 2019-06-05 08:41:45,876 basehttp 124 "POST /meiduo_admin/authorizations/ HTTP/1.1" 404 8329
+INFO 2019-06-05 08:54:48,582 basehttp 124 "OPTIONS /meiduo_admin/authorizations/ HTTP/1.1" 200 0
+WARNING 2019-06-05 08:54:49,100 base 152 Not Found: /meiduo_admin/authorizations/
+WARNING 2019-06-05 08:54:49,111 basehttp 124 "POST /meiduo_admin/authorizations/ HTTP/1.1" 404 8329
+INFO 2019-06-05 09:40:56,761 basehttp 124 "OPTIONS /meiduo_admin/authorizations/ HTTP/1.1" 200 0
+WARNING 2019-06-05 09:40:57,219 basehttp 124 "POST /meiduo_admin/authorizations/ HTTP/1.1" 400 68
+WARNING 2019-06-05 09:41:08,102 basehttp 124 "POST /meiduo_admin/authorizations/ HTTP/1.1" 400 68
+WARNING 2019-06-05 09:41:25,142 basehttp 124 "POST /meiduo_admin/authorizations/ HTTP/1.1" 400 68
+WARNING 2019-06-05 09:42:00,301 basehttp 124 "POST /meiduo_admin/authorizations/ HTTP/1.1" 400 68
+INFO 2019-06-05 10:06:51,900 basehttp 124 "OPTIONS /meiduo_admin/authorizations/ HTTP/1.1" 200 0
+WARNING 2019-06-05 10:06:52,160 basehttp 124 "POST /meiduo_admin/authorizations/ HTTP/1.1" 400 68
