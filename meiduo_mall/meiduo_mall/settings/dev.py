@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     'django_crontab',  # 定时任务
     'rest_framework',
     'corsheaders',
+    'rest_framework_jwt'
 ]
 
 MIDDLEWARE = [
@@ -338,4 +339,6 @@ REST_FRAMEWORK = {
 
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
+    #自定义响应体
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'users.utils.jwt_response_payload_handler',
 }
