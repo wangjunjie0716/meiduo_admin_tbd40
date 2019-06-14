@@ -341,4 +341,7 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1),
     #自定义响应体
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'users.utils.jwt_response_payload_handler',
+    #自定义函数
+    'JWT_PAYLOAD_HANDLER':'users.utils.user_payload_handler'
+
 }
